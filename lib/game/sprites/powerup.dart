@@ -42,6 +42,23 @@ class Rocket extends PowerUp {
     sprite = await gameRef.loadSprite('game/rocket_1.png');
     size = Vector2(50, 70);
   }
-}                                                                     
+}
 
 // Powerups: Add NooglerHat class
+class NooglerHat extends PowerUp {
+  @override
+  double get jumpSpeedMultiplier => 2.5;
+
+  NooglerHat({
+    super.position,
+  });
+
+  final int activeLengthInMS = 5000;
+
+  @override
+  Future<void>? onLoad() async {
+    await super.onLoad();
+    sprite = await gameRef.loadSprite('game/noogler_hat.png');
+    size = Vector2(75, 50);
+  }
+}
